@@ -1,25 +1,25 @@
 const User = require("../models/User");
 const { verify } = require("../helpers/token");
-const { match } = require("path-to-regexp");
 
-const publicRoutes = [
-  { path: "/register", method: "POST" },
-  { path: "/login", method: "POST" },
-  { path: "/products", method: "GET" },
-  { path: "/products/:id", method: "GET" }
-];
+// Простые проверки маршрутов без path-to-regexp
+const isPublicRoute = (method, path) => {
+  const publicRoutes = {
+    'POST': ['/register', '/login'],
+    'GET': ['/products', /^\/products\/[a-f0-9]+$/] // Регулярка для /products/:id
+  };
+
+  return publicRoutes[method]?.some(route => {
+    if (typeof route === 'string') return route === path;
+    return route.test(path);
+  });
+};
 
 module.exports = async function (req, res, next) {
   try {
-    if (req.method === "OPTIONS") return next();
-
-    const isPublic = publicRoutes.some(route => {
-      if (route.method !== req.method) return false;
-      const matcher = match(route.path, { decode: decodeURIComponent });
-      return matcher(req.path);
-    });
-
-    if (isPublic) return next();
+    // Пропускаем OPTIONS-запросы и публичные маршруты
+    if (req.method === "OPTIONS" || isPublicRoute(req.method, req.path)) {
+      return next();
+    }
 
     const token = req.cookies.token;
     if (!token) {

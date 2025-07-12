@@ -36,8 +36,7 @@ app.use(express.json());
 
 const path = require("path");
 
-// после всех остальных маршрутов
-app.get("*", (req, res) => {
+app.get(['/register', '/login'], (req, res) => {
   res.sendFile(path.resolve(__dirname, "../frontend/build", "index.html"));
 });
 
@@ -178,6 +177,10 @@ app.delete("/cart/:productId", async (req, res) => {
   } catch (e) {
     res.status(400).send({ error: e.message || "Unknown error" });
   }
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/build", "index.html"));
 });
 
 mongoose
