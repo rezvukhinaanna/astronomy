@@ -34,8 +34,6 @@ app.use(express.static("../frontend/build"))
 app.use(cookieParser());
 app.use(express.json());
 
-const path = require("path");
-
 app.post("/register", async (req, res) => {
   try {
     const { user, token } = await register(
@@ -174,8 +172,8 @@ app.delete("/cart/:productId", async (req, res) => {
   }
 });
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/build", "index.html"));
+app.get("/register", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
 });
 
 mongoose
