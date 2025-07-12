@@ -30,8 +30,7 @@ app.use(cors({
   credentials: true
 }));
 
-app.use(express.static("../frontend/build"));
-
+app.use(express.static("../frontend/build"))
 app.use(cookieParser());
 app.use(express.json());
 
@@ -44,10 +43,14 @@ app.post("/register", async (req, res) => {
     );
 
     res
-      .cookie("token", token, { httpOnly: true })
+      .cookie("token", token, { 
+        httpOnly: true,
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+        secure: process.env.NODE_ENV === "production"
+      })
       .send({ error: null, user: mapUser(user) });
   } catch (e) {
-    res.send({ error: e.message || "Unknown error" });
+    res.status(400).send({ error: e.message || "Unknown error" });
   }
 });
 

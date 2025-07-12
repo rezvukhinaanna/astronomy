@@ -3,10 +3,14 @@ const { verify } = require("../helpers/token");
 
 module.exports = async function (req, res, next) {
   try {
+    // Пропускаем OPTIONS-запросы (для CORS)
+    if (req.method === "OPTIONS") return next();
+    
+    // Проверяем наличие токена
     if (!req.cookies.token) {
       return res.status(401).json({ error: "Токен не предоставлен" });
     }
-    
+
     const tokenData = verify(req.cookies.token);
     const user = await User.findOne({ _id: tokenData.id });
 
