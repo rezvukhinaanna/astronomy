@@ -1,0 +1,144 @@
+.priceFilterContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.priceInput {
+  padding: 12px 12px;
+  border: 1px solid #3a3a4d;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.priceSeparator {
+  font-weight: bold;
+}
+
+/* CategoryFilter */
+.categoryFilterContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.categorySelect {
+  padding: 8px 12px;
+  background-color: #2c2c36;
+  border: 1px solid #3a3a4d;
+  border-radius: 4px;
+  width: 180px;
+}
+
+select {
+  font-size: 1.2rem;
+  color: #888;
+}
+
+/* Общие стили для кнопок */
+.filterButton {
+  font-size: 1rem;
+  padding: 8px 16px;
+  background-color: #c45c54;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filterButton:hover {
+  background-color: #d32f2f;
+}
+
+/* Стили для контейнера фильтров */
+.filtersContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #2c2c36;
+  border: 1px solid #3a3a4d;
+  border-radius: 8px;
+}
+
+.resetAllButton {
+  padding: 8px 16px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.resetAllButton:hover {
+  background-color: #0b7dda;
+  width: 10px;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+  .priceInput {
+    width: 160px;
+    padding: 10px 12px;
+  }
+  
+  .categorySelect {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .priceFilterContainer,
+  .categoryFilterContainer {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .priceInput,
+  .categorySelect {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .filtersContainer {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .priceFilterContainer,
+  .categoryFilterContainer {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .priceInput {
+    padding: 8px 12px;
+  }
+  
+  .categorySelect {
+    padding: 6px 12px;
+  }
+  
+  select {
+    font-size: 1rem;
+  }
+  
+  .filterButton,
+  .resetAllButton {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .filtersContainer {
+    margin: 15px 0;
+    padding: 10px;
+  }
+}

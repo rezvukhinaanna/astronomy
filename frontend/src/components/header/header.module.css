@@ -1,0 +1,147 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  min-height: 80px;
+  border-bottom: 1px solid #555;
+  color: white;
+  position: relative;
+}
+
+.userBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  color: white;
+}
+
+.userName {
+  font-weight: 400;
+  font-size: 27px;
+  user-select: none;
+}
+
+.logoutBtn {
+  margin-top: 7px;
+  background-color: #4d4d4d9f;
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 22px;
+  transition: 0.2s;
+}
+
+.logoutBtn:hover {
+  background-color: #666;
+}
+
+.leftSide {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+}
+
+.logoText {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.nav {
+  display: flex;
+  text-align: end;
+  gap: 5rem;
+  margin-right: 5rem;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Стили для действий в правой части */
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.iconButton {
+  background-color: #3a3a45;
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.iconButton:hover {
+  background-color: #50505e;
+}
+
+/* Стили для меню */
+.nav.active {
+  display: block;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to bottom right, #0d0d1f, #101020);
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 100;
+}
+
+.nav a {
+  display: block;
+  margin: 1rem 0;
+}
+
+@media (max-width: 1175px) {
+  .nav {
+    display: none;
+  }
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) {
+  .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem;
+  min-height: 80px;
+  border-bottom: 1px solid #555;
+  color: white;
+}
+}

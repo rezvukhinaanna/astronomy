@@ -1,0 +1,299 @@
+.main {
+  color: white;
+  padding: 10px 50px;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  width: auto;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.secondHero {
+  display: flex;
+  justify-content:flex-start;
+  gap: 50px;
+  align-items: center;
+  text-align: center;
+  margin-left: 8%;
+  margin-bottom: 50px;
+}
+
+
+.title {
+  font-size: 55px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.secondTitle {
+  font-size: 35px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 25px;
+  color: #b0b0b0;
+  margin-bottom: 20px;
+}
+
+.searchBox {
+  margin: auto auto;
+  display: flex;
+  background-color: #1e1e24;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  min-width: 50%;
+  max-width: 900px;
+}
+
+.searchBox input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 20px;
+  padding-left: 8px;
+  width: 100%;
+}
+
+.searchIcon {
+  color: #888;
+  margin: auto;
+}
+
+.shopButton {
+  background: linear-gradient(to right, #5e60ce, #7b60d1);
+  color: white;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 28px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.shopButton:hover {
+  opacity: 0.7;
+}
+
+.products {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.buyButton {
+  display: flex;
+  justify-content: center;
+  margin: auto auto;
+  background: linear-gradient(to right, #5e60ce, #7b60d1);
+  color: white;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  width: auto; 
+  max-width: 70%; 
+  margin-top: 12px;
+  box-sizing: border-box; 
+}
+
+.buyButton:hover {
+  opacity: 0.7;
+}
+
+.card {
+  background-color: #1a1a1e;
+  border-radius: 16px;
+  padding: 16px;
+  width: 300px;
+  min-height: 480px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.card img {
+  width: 100%;
+  height: 70%;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 23px;
+  margin: 4px 0;
+}
+
+.price {
+  color: #ccc;
+  font-size: 24px;
+}
+
+/* Pagination Styles */
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 40px 0;
+}
+
+.paginationButton {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1a1a1e;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationButton:hover {
+  background-color: #2a2a2e;
+  transform: translateY(-2px);
+}
+
+.paginationButtonActive {
+  background: linear-gradient(to right, #5e60ce, #7b60d1);
+  font-weight: 600;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .paginationButton {
+    min-width: 36px;
+    height: 36px;
+    font-size: 14px;
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .paginationContainer {
+    gap: 4px;
+  }
+
+  .paginationButton {
+    min-width: 32px;
+    height: 32px;
+    font-size: 13px;
+    padding: 0 6px;
+  }
+}
+
+/* Экран до 1200px */
+@media (max-width: 1200px) {
+  .card {
+    width: 250px;
+  }
+}
+
+/* Экран до 900px */
+@media (max-width: 900px) {
+  .card {
+    width: 240px;
+  }
+}
+
+/* Экран до 767px */
+@media (max-width: 768px) {
+  .card {
+    width: 200px;
+  }
+}
+
+/* Экран до 480px */
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}
+
+/* Адаптация для планшетов (768px - 1024px) */
+@media (max-width: 1319px) {
+  .secondHero {
+    gap: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center;
+  }
+  
+  .secondTitle {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Адаптация для мобильных устройств (до 768px) */
+@media (max-width: 1174px) {
+  .secondHero {
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 0;
+    padding: 0 20px;
+    align-items: center;
+  }
+  
+  .secondTitle {
+    font-size: 28px;
+    margin-bottom: 0;
+  }
+  
+  .priceFilterContainer,
+  .categoryFilterContainer {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .priceInput,
+  .categorySelect {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+/* Для очень маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+  .secondTitle {
+    font-size: 24px;
+  }
+  
+  .priceFilterContainer,
+  .categoryFilterContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
