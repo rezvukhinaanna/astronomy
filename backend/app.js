@@ -34,6 +34,14 @@ app.use(express.static("../frontend/build"))
 app.use(cookieParser());
 app.use(express.json());
 
+const path = require("path");
+
+// после всех остальных маршрутов
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/build", "index.html"));
+});
+
+
 app.post("/register", async (req, res) => {
   try {
     const { user, token } = await register(
