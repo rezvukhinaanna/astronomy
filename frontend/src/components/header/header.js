@@ -41,6 +41,9 @@ export const Header = () => {
         <div className={styles.actions}>
           {userRole === ROLE.GUEST ? (
             <button className={styles.iconButton}>
+              <Link to="/register" className={styles.userName} onClick={closeMenu}>
+                Sign Up
+              </Link>
               <Link to="/login" className={styles.logoSection} onClick={closeMenu}>
                 <FaUserAlt />
               </Link>
