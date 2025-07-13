@@ -40,14 +40,16 @@ export const Header = () => {
         </nav>
         <div className={styles.actions}>
           {userRole === ROLE.GUEST ? (
-            <button className={styles.iconButton}>
-              <Link to="/register" className={styles.userName} onClick={closeMenu}>
+            <div className={styles.userBox}>
+              <Link to="/register" className={styles.signup} onClick={closeMenu}>
                 Sign Up
               </Link>
-              <Link to="/login" className={styles.logoSection} onClick={closeMenu}>
-                <FaUserAlt />
-              </Link>
-            </button>
+              <button className={styles.iconButton}>
+                <Link to="/login" className={styles.logoSection} onClick={closeMenu}>
+                  <FaUserAlt />
+                </Link>
+              </button>
+            </div>
           ) : (
             <div className={styles.userBox}>
               <span className={styles.userName}>{userName}</span>

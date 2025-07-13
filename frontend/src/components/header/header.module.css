@@ -24,6 +24,20 @@
   user-select: none;
 }
 
+.signup {
+  font-weight: 400;
+  font-size: 27px;
+  user-select: none;
+  color: white;
+  text-decoration: none;
+}
+
+.signup:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
 .logoutBtn {
   margin-top: 7px;
   background-color: #4d4d4d9f;

@@ -1,6 +1,5 @@
 require('dotenv').config()
 const cors = require("cors");
-const path = require("path");
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -171,10 +170,6 @@ app.delete("/cart/:productId", async (req, res) => {
   } catch (e) {
     res.status(400).send({ error: e.message || "Unknown error" });
   }
-});
-
-app.get("/register", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
 });
 
 mongoose
