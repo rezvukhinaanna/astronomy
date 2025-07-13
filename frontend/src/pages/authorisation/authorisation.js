@@ -8,7 +8,7 @@ import { setUser } from "../../actions";
 import { request } from "../../utils/request";
 import { Navigate } from "react-router";
 import { toast } from "react-toastify";
-import { Loader } from "../../components"; // Импорт компонента Loader
+import { Loader } from "../../components";
 
 const authFormSchema = yup.object().shape({
   email: yup
@@ -44,12 +44,12 @@ export const Authorisation = () => {
   const [serverError, setServerError] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // Состояние для лоадера
+  const [isLoading, setIsLoading] = useState(false); 
 
   const onSubmit = ({email, password }) => {
-    setIsLoading(true); // Показываем лоадер при отправке формы
+    setIsLoading(true); 
     request("/login", "POST", { email, password }).then(({ error, user }) => {
-      setIsLoading(false); // Скрываем лоадер после ответа
+      setIsLoading(false);
       
       if (error) {
         setServerError(`Ошибка: ${error}`);
@@ -128,14 +128,14 @@ export const Authorisation = () => {
         <button
           type="submit"
           className={styles.loginBtn}
-          disabled={!isValid || isLoading} // Блокируем кнопку при загрузке
+          disabled={!isValid || isLoading}
         >
-          {isLoading ? "Processing..." : "Log in"} {/* Меняем текст при загрузке */}
+          {isLoading ? "Processing..." : "Log in"}
         </button>
 
-        <a href="/register" className={styles.forgot}>
+        {/* <a href="/register" className={styles.forgot}>
           Not registered yet? Sign up
-        </a>
+        </a> */}
       </form>
     </div>
   );

@@ -163,9 +163,9 @@ export const Registration = () => {
           {isLoading ? "Processing..." : "Sign up"} {/* Меняем текст при загрузке */}
         </button>
 
-        <a href="/login" className={styles.forgot}>
+        {/* <a href="/login" className={styles.forgot}>
           Do you already have an account? Log in
-        </a>
+        </a> */}
       </form>
     </div>
   );
